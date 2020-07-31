@@ -24,6 +24,8 @@ public class BubbleSorter extends Sorter{
 				
 					array[i] = y;
 					array[i+1] = x;
+					
+					display.updateDisplay();
 				}
 			}
 		
@@ -33,8 +35,6 @@ public class BubbleSorter extends Sorter{
 					break;
 				}
 			}
-			
-			display.updateDisplay();
 		}
 	}
 	
