@@ -22,45 +22,54 @@ public class _01_SearchingAndSortingAlgorithms {
 	}
 
 	/* 2. Count how many oysters contain pearls. */
-//	@Test
-//	public void testSearchAndAccumulate() throws Exception {
-//		List<Boolean> oysters = Arrays.asList(new Boolean[] { false, false, true, false, false, false, false, false, false, false, false,
-//				false, false, false, false, false, false, false, false, false, false, false, false, true });
-//		assertEquals(2, Algorithms.countPearls(oysters));
-//	}
+	@Test
+	public void testSearchAndAccumulate() throws Exception {
+		List<Boolean> oysters = Arrays.asList(new Boolean[] { false, false, true, false, false, false, false, false, false, false, false,
+				false, false, false, false, false, false, false, false, false, false, false, false, true });
+		assertEquals(2, Algorithms.countPearls(oysters));
+	}
 
 	/* 3. Create a method that will return the height of the tallest person. */
-//	@Test
-//	public void testFindMaxiumum() throws Exception {
-//		List<Double> peeps = Arrays.asList(new Double[] { 5.7, 6.2, 3.4, 6.2, 5.0, 5.5, 4.7, 6.2, 3.4, 4.2, 5.0, 4.5, 5.1, 6.6 });
-//		assertEquals(6.6, Algorithms.findTallest(peeps), 0.0);
-//	}
+	@Test
+	public void testFindMaxiumum() throws Exception {
+		List<Double> peeps = Arrays.asList(new Double[] { 5.7, 6.2, 3.4, 6.2, 5.0, 5.5, 4.7, 6.2, 3.4, 4.2, 5.0, 4.5, 5.1, 6.6 });
+		assertEquals(6.6, Algorithms.findTallest(peeps), 0.0);
+	}
 
 	/* 4. Create a method that will find the longest word. */
-//	@Test
-//	public void testFindMaxiumumString() throws Exception {
-//		List<String> words = Arrays.asList(new String[] { "accoutrements", "acumen", "anomalistic", "auspicious", "bellwether",
-//				"callipygian", "circumlocution", "concupiscent", "conviviality", "coruscant", "cuddlesome", "cupidity", "cynosure",
-//				"ebullient", "equanimity", "excogitate", "gasconading", "idiosyncratic", "luminescent", "magnanimous", "nidificate",
-//				"osculator", "parsimonious", "penultimate", "perfidiousness", "perspicacious", "proficuous", "remunerative", "saxicolous",
-//				"sesquipedalian", "superabundant", "unencumbered", "unparagoned", "usufruct", });
-//		assertEquals("circumlocution", Algorithms.findLongestWord(words));
-//	}
+	@Test
+	public void testFindMaxiumumString() throws Exception {
+		List<String> words = Arrays.asList(new String[] { "accoutrements", "acumen", "anomalistic", "auspicious", "bellwether",
+				"callipygian", "circumlocution", "concupiscent", "conviviality", "coruscant", "cuddlesome", "cupidity", "cynosure",
+				"ebullient", "equanimity", "excogitate", "gasconading", "idiosyncratic", "luminescent", "magnanimous", "nidificate",
+				"osculator", "parsimonious", "penultimate", "perfidiousness", "perspicacious", "proficuous", "remunerative", "saxicolous",
+				"sesquipedalian", "superabundant", "unencumbered", "unparagoned", "usufruct", });
+		assertEquals("circumlocution", Algorithms.findLongestWord(words));
+	}
 
 	/*
 	 * 5. The Morse code for SOS is "... --- ..."
 	 * Create a method that can tell if SOS is contained in a message.
 	 */
-//	@Test
-//	public void testFindString() throws Exception {
-//		List<String> message1 = Arrays.asList(".... . .-. .-. --- / ... --- ... / -.-- .- .-.. .-.. ...".split(" / "));
-//		assertEquals(true, Algorithms.containsSOS(message1));
-//		List<String> message2 = Arrays
-//				.asList(".-- .. - .... / - .... . / .-.. .. --. .... - ... / --- ..- - --..-- / .. - .----. ... / .-.. . ... ... / -.. .- -. --. . .-. --- ..- ... / .... . .-. . / .-- . / .- .-. . / -. --- .-- ? / . -. - . .-. - .- .. -. / ..- ... / .. / ..-. . . .-.. / ... - ..- .--. .. -.. / .- -. -.. / -.-. --- -. - .- --. .. --- ..- ... / .... . .-. . / .-- . / .- .-. . / -. --- .-- ? / . -. - . .-. - .- .. -. / ..- ... / .- / -- ..- .-.. .- - - --- --..-- / .- -. / .- .-.. -... .. -. --- --..-- / .- / -- --- ... --.- ..- .. - --- --..-- / -- -.-- / .-.. .. -... .. -.. --- / -.-- . .- .... --..-- / .... . -.-- / -.-- . .- ....".split("/"));
-//		assertEquals(false, Algorithms.containsSOS(message2));
-//	}
+	@Test
+	public void testFindString() throws Exception {
+		List<String> message1 = Arrays.asList(".... . .-. .-. --- / ... --- ... / -.-- .- .-.. .-.. ...".split(" / "));
+		assertEquals(true, Algorithms.containsSOS(message1));
+		List<String> message2 = Arrays.asList(".-- .. - .... / - .... . / .-.. .. --. .... - ... / --- ..- - --..-- / .. - .----. ... / .-.. . ... ... / -.. .- -. --. . .-. --- ..- ... / .... . .-. . / .-- . / .- .-. . / -. --- .-- ? / . -. - . .-. - .- .. -. / ..- ... / .. / ..-. . . .-.. / ... - ..- .--. .. -.. / .- -. -.. / -.-. --- -. - .- --. .. --- ..- ... / .... . .-. . / .-- . / .- .-. . / -. --- .-- ? / . -. - . .-. - .- .. -. / ..- ... / .- / -- ..- .-.. .- - - --- --..-- / .- -. / .- .-.. -... .. -. --- --..-- / .- / -- --- ... --.- ..- .. - --- --..-- / -- -.-- / .-.. .. -... .. -.. --- / -.-- . .- .... --..-- / .... . -.-- / -.-- . .- ....".split("/"));
+		assertEquals(false, Algorithms.containsSOS(message2));
+	}
 
 	/* 6. Write a morse code translator to read the messages. Just kidding! */
+	//Challenge Accepted!
+	@Test
+	public void translateMorseCode() throws Exception {
+		List<String> message1 = Arrays.asList(".... . .-. .-. --- / ... --- ... / -.-- .- .-.. .-.. ...".split(" / "));
+		List<String> message2 = Arrays.asList(".-- .. - .... / - .... . / .-.. .. --. .... - ... / --- ..- - --..-- / .. - .----. ... / .-.. . ... ... / -.. .- -. --. . .-. --- ..- ... / .... . .-. . / .-- . / .- .-. . / -. --- .-- ? / . -. - . .-. - .- .. -. / ..- ... / .. / ..-. . . .-.. / ... - ..- .--. .. -.. / .- -. -.. / -.-. --- -. - .- --. .. --- ..- ... / .... . .-. . / .-- . / .- .-. . / -. --- .-- ? / . -. - . .-. - .- .. -. / ..- ... / .- / -- ..- .-.. .- - - --- --..-- / .- -. / .- .-.. -... .. -. --- --..-- / .- / -- --- ... --.- ..- .. - --- --..-- / -- -.-- / .-.. .. -... .. -.. --- / -.-- . .- .... --..-- / .... . -.-- / -.-- . .- ....".split("/"));
+		assertEquals("HERRO SOS YALLS", Algorithms.translateMorseCode(message1));
+		assertEquals("WITH THE LIGHTS OUT, IT'S LESS DANGEROUS HERE WE ARE NOW? ENTERTAIN US I FEEL STUPID AND CONTAGIOUS HERE WE ARE NOW? ENTERTAIN US A MULATTO, AN ALBINO, A MOSQUITO, MY LIBIDO YEAH, HEY YEAH", Algorithms.translateMorseCode(message2));
+	}
+	//Switch statement for the win!
+	//Alright what on earth is message 2
 
 	/* 7. Sort the exam results from lowest to highest. */
 //	@Test
