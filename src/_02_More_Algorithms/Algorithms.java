@@ -169,4 +169,57 @@ public class Algorithms {
 		System.out.println(finalMessage);
 		return finalMessage;
 	}
+	
+	public static List<Double> sortScores(List<Double> results) {	
+		for(int i=1; i<results.size(); i++) {
+			for(int j=i; j>0; j--) {
+				if(results.get(j) < results.get(j-1)) {
+					double x = results.get(j);
+					double y = results.get(j-1);
+					
+					results.set(j, y);
+					results.set(j-1, x);
+				}
+			}
+		}
+		
+		return results;
+	}
+	
+	public static List<String> sortDNA(List<String> sequences){
+		int index;
+		int minimum;
+		
+		for(int i=0; i<sequences.size() - 1; i++) {
+			index = i;
+			minimum = sequences.get(i).length();
+			
+			for(int j=i; j<sequences.size(); j++) {
+				if(sequences.get(j).length() < minimum) {
+					index = j;
+					minimum = sequences.get(j).length();
+				}
+			}
+			
+			String x = sequences.get(index);
+			sequences.set(index, sequences.get(i));
+			sequences.set(i, x);
+		}
+		
+		return sequences;
+	}
+	
+	public static List<String> sortWords(List<String> words){
+		for(int i=0; i<words.size(); i++) {
+			for(int j=i; j>0; j--) {
+				if(words.get(j).compareTo(words.get(j-1)) < 0){
+					String x = words.get(j);
+					words.set(j, words.get(j-1));
+					words.set(j-1, x);
+				}
+			}
+		}
+		
+		return words;
+	}
 }
