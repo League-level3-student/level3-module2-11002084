@@ -27,6 +27,19 @@ public class Checkpoint {
 		checkpoint.sort(strListOne);
 		checkpoint.sort(strListTwo);
 		*/
+		
+		int[] intListOne = new int[] {2, 4, 6, 8, 9, 13};
+		int[] intListTwo = new int[] {265, 341, 412, 589, 921};
+		
+		/*
+		checkpoint.search(intListOne, 4);
+		checkpoint.search(intListOne, 7);
+		checkpoint.search(intListTwo, 589);
+		*/
+		
+		checkpoint.binarySearch(intListOne, 0, intListOne.length, 9);
+		checkpoint.binarySearch(intListTwo, 0, intListTwo.length, 265);
+		checkpoint.binarySearch(intListTwo, 0, intListTwo.length, 115);
 	}
 	
 	public double[] sort(double[] list, int order) {
@@ -88,34 +101,33 @@ public class Checkpoint {
 	}
 	
 	public int search(int[] list, int searchNum) {
-		list = sort(list);
-		return searchIteration(list, searchNum);
+		for(int i=0; i<list.length; i++) {
+			if(list[i] == searchNum) {
+				System.out.println(i);
+				return i;
+			}
+		}
+		System.out.println(-1);
+		return -1;
 	}
 	
-	public int searchIteration(int[] list, int searchNum) {
-		int low = 0;
-		int middle = list.length/2;
-		int high = list.length;
-		int[] newList;
-		
-		if(list[middle] == searchNum) {
-			return middle;
-		}
-		else if(list[middle] > searchNum) {
-			newList = new int[middle];
-			for(int i=low; i<middle; i++) {
-				newList[i] = list[i];
+	public int binarySearch(int[] list, int start, int end, int searchValue) {
+		if(end >= start) {
+			int mid = (start + end)/2;
+			
+			if(list[mid] == searchValue) {
+				System.out.println(mid);
+				return mid;
 			}
-			return searchIteration(newList, searchNum);
-		}
-		else if(list[middle] > searchNum) {
-			newList = new int[middle];
-			for(int i=middle+1; i<high; i++) {
-				newList[i-middle-1] = list[i];
+			else if(list[mid] > searchValue) {
+				return binarySearch(list, start, mid-1, searchValue);
 			}
-			return searchIteration(newList, searchNum);
+			else {
+				return binarySearch(list, mid+1, end, searchValue);
+			}
 		}
 		
+		System.out.println(-1);
 		return -1;
 	}
 }
